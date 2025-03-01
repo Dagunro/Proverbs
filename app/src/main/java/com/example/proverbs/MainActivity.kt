@@ -4,9 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.annotation.StringRes
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,14 +14,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -34,10 +29,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proverbs.ui.theme.ProverbsTheme
@@ -66,548 +59,545 @@ fun ProverbsApp(){
 
     when(result){
 
-      1 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_12,
-            textResourceIdTwo = R.string.proverbs_01,
-            buttonOne = {
-                result = 1
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    2 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.Epictectus1,
-            textResourceIdTwo = R.string.EP,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    3 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.MA1,
-            textResourceIdTwo = R.string.MA,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    4 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_13,
-            textResourceIdTwo = R.string.proverbs_02,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    5 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_14,
-            textResourceIdTwo = R.string.proverbs_03,
-            buttonOne = {
-                result = 1
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    6 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.Epictectus2,
-            textResourceIdTwo = R.string.EP,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    7 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_15,
-            textResourceIdTwo = R.string.proverbs_04,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    8 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.Seneca1,
-            textResourceIdTwo = R.string.Seneca,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    9 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_16,
-            textResourceIdTwo = R.string.proverbs_05,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    10 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.MA2,
-            textResourceIdTwo = R.string.MA,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    11 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_17,
-            textResourceIdTwo = R.string.proverbs_06,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    12 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_18,
-            textResourceIdTwo = R.string.proverbs_07,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    13 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.MA3,
-            textResourceIdTwo = R.string.MA,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    14 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.Rumi1,
-            textResourceIdTwo = R.string.Rumi,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    15 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.Socrates1,
-            textResourceIdTwo = R.string.Socrates,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    16 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_19,
-            textResourceIdTwo = R.string.proverbs_08,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    17 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_20,
-            textResourceIdTwo = R.string.proverbs_09,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    18 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.Epictectus3,
-            textResourceIdTwo = R.string.EP,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    19 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_21,
-            textResourceIdTwo = R.string.proverbs_010,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    20 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_22,
-            textResourceIdTwo = R.string.proverbs_011,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    21 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_23,
-            textResourceIdTwo = R.string.proverbs_012,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    22 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.Epictectus4,
-            textResourceIdTwo = R.string.EP,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    23 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_24,
-            textResourceIdTwo = R.string.proverbs_013,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    24 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_25,
-            textResourceIdTwo = R.string.proverbs_014,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    25 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_26,
-            textResourceIdTwo = R.string.proverbs_015,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    26 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_12,
-            textResourceIdTwo = R.string.proverbs_01,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    27 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_12,
-            textResourceIdTwo = R.string.proverbs_01,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    28 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_12,
-            textResourceIdTwo = R.string.proverbs_01,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    29 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_12,
-            textResourceIdTwo = R.string.proverbs_01,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result++
-            }
-        )
-      }
-
-    30 -> {
-
-        ProverbsQuote(
-
-            textResourceId = R.string.proverbs_12,
-            textResourceIdTwo = R.string.proverbs_01,
-            buttonOne = {
-                result--
-            },
-            buttonTwo = {
-                result = 1
-            },
-            buttonThree = {
-                result = 1
-            }
-        )
-      }
-
-
-
+        1 -> {
+            ProverbsQuote(
+                textResourceId = R.string.proverbs_12,
+                textResourceIdTwo = R.string.proverbs_01,
+                buttonOne = {
+                    result = 1
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+
+            )
+        }
+        2 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Epictectus1,
+                textResourceIdTwo = R.string.EP,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+        3 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.MA1,
+                textResourceIdTwo = R.string.MA,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+        4 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_13,
+                textResourceIdTwo = R.string.proverbs_02,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        5 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_14,
+                textResourceIdTwo = R.string.proverbs_03,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        6 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Epictectus2,
+                textResourceIdTwo = R.string.EP,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        7 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_15,
+                textResourceIdTwo = R.string.proverbs_04,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        8 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Seneca1,
+                textResourceIdTwo = R.string.Seneca,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        9 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_16,
+                textResourceIdTwo = R.string.proverbs_05,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        10 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.MA2,
+                textResourceIdTwo = R.string.MA,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        11 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_17,
+                textResourceIdTwo = R.string.proverbs_06,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        12 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_18,
+                textResourceIdTwo = R.string.proverbs_07,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        13 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.MA3,
+                textResourceIdTwo = R.string.MA,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        14 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Rumi1,
+                textResourceIdTwo = R.string.Rumi,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        15 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Socrates1,
+                textResourceIdTwo = R.string.Socrates,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        16 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_19,
+                textResourceIdTwo = R.string.proverbs_08,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        17 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_20,
+                textResourceIdTwo = R.string.proverbs_09,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        18 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Epictectus3,
+                textResourceIdTwo = R.string.EP,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        19 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_21,
+                textResourceIdTwo = R.string.proverbs_010,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        20 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_22,
+                textResourceIdTwo = R.string.proverbs_011,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        21 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_23,
+                textResourceIdTwo = R.string.proverbs_012,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        22 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Epictectus4,
+                textResourceIdTwo = R.string.EP,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        23 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_24,
+                textResourceIdTwo = R.string.proverbs_013,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        24 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_25,
+                textResourceIdTwo = R.string.proverbs_014,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        25 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_26,
+                textResourceIdTwo = R.string.proverbs_015,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        26 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.Epictectus5,
+                textResourceIdTwo = R.string.EP,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        27 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_27,
+                textResourceIdTwo = R.string.proverbs_016,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        28 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_28,
+                textResourceIdTwo = R.string.proverbs_017,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        29 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_29,
+                textResourceIdTwo = R.string.proverbs_018,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result++
+                }
+            )
+        }
+
+        30 -> {
+
+            ProverbsQuote(
+
+                textResourceId = R.string.proverbs_30,
+                textResourceIdTwo = R.string.proverbs_019,
+                buttonOne = {
+                    result--
+                },
+                buttonTwo = {
+                    result = 1
+                },
+                buttonThree = {
+                    result = 1
+                }
+
+            )
+
+
+
+        }
     }
 }
 
@@ -617,11 +607,8 @@ fun ProverbsQuote(
     textResourceIdTwo: Int,
     buttonOne: () -> Unit,
     buttonTwo: () -> Unit,
-    buttonThree: (() -> Unit)? = null
-)
-{
-
-
+    buttonThree: () -> Unit
+) {
 
     Surface(
         modifier = Modifier
@@ -698,33 +685,32 @@ fun ProverbsQuote(
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
-                if (buttonThree != null) {
-                    Button(
-                        onClick = buttonThree,
-                        colors = ButtonDefaults.textButtonColors(
-                            containerColor = Color.Transparent,
-                            contentColor = Color.Black
-                        )) {
-                        Text(
-                            text = ">>",
-                            color = Color.Gray,
-                            style = MaterialTheme.typography.titleLarge
-                        )
-                    }
-                }
+              Button(
+                  onClick = buttonThree,
+                  colors = ButtonDefaults.textButtonColors(
+                      containerColor = Color.Transparent,
+                      contentColor = Color.Black
+                  )) {
+                  Text(
+                      text = ">>",
+                      color = Color.Gray,
+                      style = MaterialTheme.typography.titleLarge
+                  )
+              }
+            }
 
-//
+
 
 
             }
 
         }
     }
-    Spacer(modifier = Modifier.height(350.dp))
 
 
 
-}
+
+
 
 @Preview(
     showBackground = true,
