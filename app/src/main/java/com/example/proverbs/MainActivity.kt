@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -25,9 +26,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -53,12 +59,44 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
 fun ProverbsApp(){
 
+    var result by remember { mutableStateOf(1) }
+
+    when(result){
+
+      1 -> {
+
+        ProverbsQuote(
+
+            textResourceId = R.string.proverbs_12,
+            textResourceIdTwo = R.string.proverbs_01,
+            buttonOne = {
+                result = 1
+            },
+            buttonTwo = {
+                result = 1
+            },
+            buttonThree = {
+                result++
+            }
+        )
+      }
+
+
+
+    }
 }
 
 @Composable
-fun ProverbsQuote()
+fun ProverbsQuote(
+    textResourceId: Int,
+    textResourceIdTwo: Int,
+    buttonOne: () -> Unit,
+    buttonTwo: () -> Unit,
+    buttonThree: () -> Unit
+)
 {
 
 
@@ -68,8 +106,25 @@ fun ProverbsQuote()
             .fillMaxSize(),
 
     ) {
+        Box(
+            modifier = Modifier
+                .size(170.dp, 130.dp)
+                .padding(16.dp),
+            contentAlignment = Alignment.TopStart
+        ){
+
+            Text(
+                text = "Proverbs.",
+                fontWeight = FontWeight.Bold,
+                fontSize = 30.sp
+
+
+            )
+        }
         Column (
-            modifier = Modifier.fillMaxSize().padding(25.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(25.dp),
             verticalArrangement = Arrangement.Center,
 
 
@@ -77,16 +132,16 @@ fun ProverbsQuote()
 
         ){
             Text(
-                text = "A person may think their own ways are right, but the Lord weighs the heart.",
+                text = stringResource(textResourceId),
                 color = Color.DarkGray,
                 style = MaterialTheme.typography.displayMedium,
                 fontWeight = FontWeight.Thin
 
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(67.dp))
 
             Text(
-                text = "Proverbs 2:12",
+                text = stringResource(textResourceIdTwo),
                 color = Color.LightGray,
                 style = MaterialTheme.typography.displaySmall,
                 fontWeight = FontWeight.Light
@@ -95,12 +150,12 @@ fun ProverbsQuote()
 
             )
 
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(100.dp))
 
             Row (modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween){
 
                 Button(
-                    onClick = {},
+                    onClick = buttonOne,
                     colors = ButtonDefaults.textButtonColors(
                         containerColor = Color.Transparent,
                         contentColor = Color.Black
@@ -108,7 +163,7 @@ fun ProverbsQuote()
                         Text(text = "<<")
                 }
                 Button(
-                    onClick = {},
+                    onClick = buttonTwo,
                     colors = ButtonDefaults.textButtonColors(
                         containerColor = Color.Transparent,
                         contentColor = Color.Black
@@ -116,12 +171,15 @@ fun ProverbsQuote()
                     Text(text = "Home")
                 }
                 Button(
-                    onClick = {},
+                    onClick = buttonThree,
                     colors = ButtonDefaults.textButtonColors(
                         containerColor = Color.Transparent,
                         contentColor = Color.Black
                     )) {
-                    Text(text = ">>")
+                    Text(
+                        text = ">>",
+                        color = Color.LightGray
+                    )
                 }
 
 //
@@ -132,24 +190,7 @@ fun ProverbsQuote()
         }
     }
     Spacer(modifier = Modifier.height(350.dp))
-    Box(
-        modifier = Modifier
-            .size(170.dp, 130.dp)
-            .padding(16.dp)
-            .background(color = Color.Yellow),
 
-
-        contentAlignment = Alignment.CenterStart
-    ){
-
-        Text(
-            text = "Proverbs.",
-            fontWeight = FontWeight.Bold,
-            fontSize = 30.sp
-
-
-        )
-    }
 
 
 }
@@ -161,6 +202,6 @@ fun ProverbsQuote()
 @Composable
 fun ProverbsAppPreview() {
     ProverbsTheme {
-        ProverbsQuote()
+        ProverbsApp()
     }
 }
